@@ -1,0 +1,48 @@
+@use '../../styles/mixins.scss';
+
+.header {
+  margin-top: 58px;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  z-index: 1;
+
+  @include mixins.vp-max {
+    gap: 44px;
+  }
+
+  @include mixins.vp-tablet {
+    margin-top: 30px;
+    justify-content: space-between;
+  }
+
+  @include mixins.vp-mobile {
+    margin-top: 0;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}
+
+.company {
+  max-width: 150px;
+
+  p {
+    font-size: 10px;
+    line-height: 1.2;
+    font-weight: 300;
+    margin-top: 5px;
+    margin-bottom: 0;
+  }
+
+  @include mixins.vp-mobile {
+    display: none;
+  }
+}
+
+.contacts {
+  margin-left: auto;
+
+  @include mixins.vp-tablet {
+    display: none;
+  }
+}

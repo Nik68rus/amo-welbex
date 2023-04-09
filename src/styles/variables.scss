@@ -1,0 +1,30 @@
+// Colors
+// ---------------------------------
+
+$color-default-black: #0e1014;
+$color-default-white: #e4e5fa;
+
+$color-text-gray: #656566;
+$color-accent: #4077f3;
+
+// Gradient
+$gradient-text: linear-gradient(92deg, #fcb045 27.14%, #ff3f78 121.36%);
+
+// Typography
+// ---------------------------------
+$ff-montserrat: 'Montserrat', 'Arial', sans-serif;
+$ff-inter: 'Inter', 'Arial', sans-serif;
+
+// Animation
+// ---------------------------------
+$tf-default: ease;
+$trans-default: 0.3s $tf-default;
+
+//Paddings
+$pd-mobile: 16px;
+$pd-tablet: 24px;
+$pd-desktop: 32px;
+
+// Viewports
+// ---------------------------------
+$max-width: 1204px;

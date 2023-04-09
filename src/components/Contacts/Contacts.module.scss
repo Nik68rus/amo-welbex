@@ -1,0 +1,72 @@
+@use '../../styles/variables.scss' as vars;
+@use '../../styles/mixins.scss';
+
+.contacts {
+  display: flex;
+  gap: 48px;
+  align-items: center;
+  font-style: normal;
+  font-family: vars.$ff-inter;
+}
+
+.contactsFull {
+  flex-direction: column;
+  gap: 20px;
+
+  .socialList {
+    gap: 10px;
+  }
+
+  @include mixins.vp-tablet {
+    gap: 10px;
+    .socialList {
+      gap: 16px;
+    }
+  }
+}
+
+.title {
+  margin: 0;
+  text-transform: uppercase;
+  color: vars.$color-text-gray;
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: 700;
+
+  @include mixins.vp-mobile {
+    font-size: 12px;
+    line-height: 15px;
+  }
+}
+
+.phone {
+  flex-shrink: 0;
+  font-size: 16px;
+  line-height: 19px;
+  font-weight: 500;
+
+  @include mixins.vp-mobile {
+    margin-top: 8px;
+  }
+}
+
+.socialList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+
+  @include mixins.vp-max {
+    gap: 28px;
+  }
+}
+
+.address {
+  margin: 0;
+
+  @include mixins.vp-mobile {
+    font-size: 14px;
+    line-height: 17px;
+  }
+}

@@ -1,0 +1,17 @@
+.container {
+  width: 100%;
+  max-width: $max-width;
+  margin: 0 auto;
+  padding-left: $pd-desktop;
+  padding-right: $pd-desktop;
+
+  @include vp-tablet {
+    padding-left: $pd-tablet;
+    padding-right: $pd-tablet;
+  }
+
+  @include vp-mobile {
+    padding-left: $pd-mobile;
+    padding-right: $pd-mobile;
+  }
+}

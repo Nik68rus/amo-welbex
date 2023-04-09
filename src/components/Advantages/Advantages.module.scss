@@ -1,0 +1,150 @@
+@use '../../styles/variables.scss' as vars;
+@use '../../styles/mixins.scss';
+
+.advantages {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  @include mixins.vp-mobile {
+    align-items: flex-start;
+  }
+}
+
+.intro {
+  margin-top: 0;
+  margin-bottom: 40px;
+  font-family: vars.$ff-inter;
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-align: end;
+
+  span {
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  @include mixins.vp-mobile {
+    text-align: start;
+    margin-bottom: 20px;
+
+    span {
+      text-transform: none;
+    }
+  }
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+
+  @include mixins.vp-tablet {
+    gap: 20px 14px;
+  }
+
+  @include mixins.vp-mobile {
+    gap: 14px 10px;
+  }
+}
+
+.item {
+  width: calc(50% - 15px);
+
+  h3 {
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 6px;
+    font-family: vars.$ff-inter;
+    text-align: end;
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+  }
+
+  p {
+    margin: 0;
+    text-align: end;
+  }
+
+  @include mixins.vp-tablet {
+    h3 {
+      font-size: 15px;
+      line-height: 20px;
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 18px;
+    }
+  }
+
+  @include mixins.vp-mobile {
+    width: calc(50% - 5px);
+
+    &:nth-child(3) {
+      order: -1;
+    }
+
+    h3 {
+      font-family: vars.$ff-montserrat;
+      font-weight: 400;
+      font-size: 13px;
+      line-height: 16px;
+      text-align: start;
+      margin-bottom: 0;
+      padding-left: 15px;
+      position: relative;
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 50%;
+        width: 10px;
+        height: 1px;
+        background: vars.$gradient-text;
+      }
+    }
+
+    p {
+      display: none;
+    }
+  }
+}
+
+.mobileTitle {
+  display: none;
+
+  @include mixins.vp-mobile {
+    display: block;
+
+    & + span {
+      display: none;
+    }
+  }
+}
+
+.action {
+  margin-top: 60px;
+
+  @include mixins.vp-mobile {
+    display: none;
+  }
+}
+
+.gradientBg {
+  background-image: vars.$gradient-text;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.gradientText {
+  -webkit-text-fill-color: transparent;
+}

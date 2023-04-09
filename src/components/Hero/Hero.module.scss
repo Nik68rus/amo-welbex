@@ -1,0 +1,106 @@
+@use '../../styles/variables.scss' as vars;
+@use '../../styles/mixins.scss';
+
+.hero {
+  flex-grow: 1;
+  margin-top: -116px;
+  padding-top: 116px;
+  background-image: url('../../assets/images/purple-ball.png'),
+    url('../../assets/images/red-ball.png'),
+    url('../../assets/images/red-ball-small.png');
+  background-repeat: no-repeat;
+  background-position: 66% 0, 36% 13%, 63% 90%;
+  background-size: auto;
+  display: flex;
+  align-items: center;
+
+  @include mixins.vp-tablet {
+    margin-top: -88px;
+    padding-top: 88px;
+  }
+
+  @include mixins.vp-mobile {
+    margin-top: 0;
+    padding-top: 40px;
+    padding-bottom: 60px;
+
+    background-image: url('../../assets/images/mobile-bg.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+  }
+}
+
+.wrapper {
+  width: 100%;
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+
+  @include mixins.vp-mobile {
+    flex-direction: column;
+    gap: 45px;
+  }
+}
+
+.title {
+  max-width: 400px;
+  margin-top: 26px;
+
+  h1 {
+    font-family: vars.$ff-inter;
+    font-size: 48px;
+    line-height: 58px;
+    font-weight: 400;
+    margin-top: 0;
+    margin-bottom: 30px;
+
+    span {
+      font-weight: 900;
+    }
+  }
+
+  p {
+    font-size: 18px;
+    line-height: 22px;
+    margin: 0;
+  }
+
+  @include mixins.vp-tablet {
+    h1 {
+      font-size: 42px;
+      line-height: 50px;
+    }
+  }
+
+  @include mixins.vp-mobile {
+    max-width: none;
+    margin-top: 0;
+
+    h1 {
+      margin-bottom: 15px;
+      font-size: 36px;
+      line-height: 44px;
+    }
+  }
+}
+
+.advantages {
+  max-width: 300px;
+  margin-top: 42px;
+
+  @include mixins.vp-mobile {
+    max-width: none;
+    margin-top: 0;
+  }
+}
+
+.gradientBg {
+  background-image: vars.$gradient-text;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.gradientText {
+  -webkit-text-fill-color: transparent;
+}

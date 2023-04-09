@@ -1,0 +1,81 @@
+@use '../../styles/variables.scss' as vars;
+@use '../../styles/mixins.scss';
+
+.footer {
+  padding-top: 55px;
+  padding-bottom: 20px;
+  display: grid;
+  grid-template-columns: minmax(max-content, 1fr) minmax(max-content, 2fr) minmax(
+      max-content,
+      1fr
+    );
+  gap: 20px;
+
+  address {
+    text-align: end;
+  }
+
+  @include mixins.vp-tablet {
+    padding-bottom: 40px;
+    grid-template-columns: minmax(max-content, 1fr) minmax(max-content, 2fr);
+
+    address {
+      text-align: start;
+    }
+  }
+
+  @include mixins.vp-mobile {
+    padding-top: 41px;
+    padding-bottom: 60px;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.copyright {
+  font-size: 12px;
+  grid-column: 1/-1;
+  text-align: end;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  a {
+    display: block;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 1px;
+      height: 1px;
+      background-color: vars.$color-default-white;
+    }
+  }
+
+  p {
+    margin: 0;
+    margin-bottom: 5px;
+  }
+
+  @include mixins.vp-tablet {
+    grid-column: auto;
+    align-self: end;
+  }
+
+  @include mixins.vp-mobile {
+    align-self: flex-start;
+    align-items: flex-start;
+    margin-top: 30px;
+  }
+}
+
+.contacts {
+  align-items: flex-end;
+
+  @include mixins.vp-tablet {
+    align-items: flex-start;
+  }
+}

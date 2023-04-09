@@ -1,0 +1,46 @@
+.wrapper {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: calc(100 * var(--vh, 1vh));
+
+  background-image: url('../../assets/images/purple-light.png'),
+    url('../../assets/images/red-light.png');
+  background-repeat: no-repeat, no-repeat;
+  background-size: 100%, 50%;
+  background-position: top center, center left;
+
+  @include vp-mobile {
+    background: none;
+  }
+
+  .header,
+  .footer {
+    flex-shrink: 0;
+  }
+
+  main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+
+  white-space: nowrap;
+
+  border: 0;
+
+  clip: rect(0 0 0 0);
+  clip-path: inset(100%);
+}

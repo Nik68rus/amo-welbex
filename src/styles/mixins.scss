@@ -1,0 +1,28 @@
+@mixin hidden-scrollbar {
+  &::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    background: transparent; /* make scrollbar transparent */
+  }
+
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+
+@mixin vp-max {
+  @media (min-width: 1205px) {
+    @content;
+  }
+}
+
+@mixin vp-tablet {
+  @media (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin vp-mobile {
+  @media (max-width: 768px) {
+    @content;
+  }
+}

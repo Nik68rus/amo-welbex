@@ -1,0 +1,60 @@
+@use '../../styles/variables.scss' as vars;
+@use '../../styles/mixins.scss';
+
+.menu {
+  font-family: vars.$ff-inter;
+
+  a {
+    cursor: pointer;
+  }
+}
+
+.title {
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: 700;
+  color: vars.$color-text-gray;
+  margin-top: 0;
+  margin-bottom: 20px;
+
+  @include mixins.vp-mobile {
+    font-size: 12px;
+    line-height: 15px;
+  }
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+
+  li {
+    margin-bottom: 10px;
+
+    @include mixins.vp-mobile {
+      font-size: 14px;
+      line-height: 17px;
+    }
+  }
+}
+
+.menuColumns {
+  display: flex;
+  gap: 50px;
+
+  @include mixins.vp-mobile {
+    gap: 30px;
+    .list {
+      width: calc(50% - 25px);
+    }
+  }
+}
+
+.long {
+  @include mixins.vp-mobile {
+    order: -1;
+  }
+}
